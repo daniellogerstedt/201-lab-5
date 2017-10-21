@@ -61,6 +61,7 @@ function sumAndMultiply(a,b,c){ //eslint-disable-line
   var productTotal = multiply(productOne[0], a);
   var sumMessage =  a + ' and ' + b + ' and ' + c + ' sum to ' + sumTotal[0] + '.';
   var productMessage = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + productTotal[0] + '.';
+
   return [sumTotal[0], productTotal[0], sumMessage, productMessage];
 }
 
@@ -112,19 +113,25 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(testArray){ //eslint-disable-line
-  var arrayMessage;
+  var arrayMultiMessage;
   var arrayTotal;
 
   arrayTotal = sumAndMultiply(testArray[0], testArray[1], testArray[2])[1];
   // console.log(arrayTotal);
 
-  arrayMessage = 'The numbers ' + testArray + ' have a product of ' + arrayTotal + '.';
+  arrayMultiMessage = 'The numbers ' + testArray + ' have a product of ' + arrayTotal + '.';
   // console.log(arrayMessage);
 
-  return [arrayTotal, arrayMessage];
+  return [arrayTotal, arrayMultiMessage];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
 testMultiplyArray(2,3,4);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
+document.getElementById('sum').innerHTML = 'Total: ' + sum(4, 7)[0] + ' Message: ' + sum(4, 7)[1];
+document.getElementById('multiply').innerHTML = 'Total: ' + multiply(5, 9)[0] + ' Message: ' + multiply(5, 9)[1];
+document.getElementById('sum-and-multiply-S').innerHTML = 'Total: ' + sumAndMultiply(4, 7, 5)[0] + ' Message: ' + sumAndMultiply(4, 7, 5)[2];
+document.getElementById('sum-and-multiply-M').innerHTML = 'Total: ' + sumAndMultiply(4, 7, 5)[1] + ' Message: ' + sumAndMultiply(4, 7, 5)[3];
+document.getElementById('sum-array').innerHTML = 'Total: ' + sumArray(testArray)[0] + ' Message: ' + sumArray(testArray)[1];
+document.getElementById('multiply-array').innerHTML = 'Total: ' + multiplyArray(testArray)[0] + ' Message: ' + multiplyArray(testArray)[1];
